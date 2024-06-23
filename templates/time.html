@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Наше время</title>
+    <style>
+        .clock {
+            font-family: "Digital-7", monospace;
+            font-size: 60px;
+            color: #00ff00;
+            background-color: #000;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 300px;
+            margin: 50px auto;
+        }
+
+    </style>
+    <link rel="stylesheet" href="static/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body style="background-image: url('{{ url_for('static', filename='Photos/time.jpg') }}'); background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    width: 100vw;;">
+
+    <h1 style="background-color: #007bff; color: #fff; text-align: center; padding-top: 50px;" >
+        <a class="navbar-brand d-flex justify-content-between align-items-center" href="#">
+            <span></span>
+            <img src="{{ url_for('static', filename='Photos/yoga_logo.jpg') }}" alt="Logo" width="59" height="50" class="d-inline-block align-text-top">
+            МИР ЙОГИ
+            <button type="button" class="btn btn-primary position-relative">
+              Профиль
+              <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">Новые уведомления</span>
+              </span>
+            </button>
+            <span></span>
+        </a>
+    </h1>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">Блог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/contacts/">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/time/">Наше время</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <p style="font-size: 24px; color: white;"> Время - это наше самое ценное и необратимое достояние, которое безудержно утекает, не жалея ни о ком и ни о чем.
+        Каждая секунда, минута, час уходящего времени напоминают нам о важности задуматься о том, как мы его проводим.
+        Поглощенные повседневными заботами и рутиной, мы часто забываем ценить каждый момент, который дарует нам жизнь.
+        Вместо бесконечных отлаганий и прокрастинации, стоит задуматься о том, на что мы тратим свое драгоценное время.
+        Время не ждет никого и не возвращается назад, поэтому важно научиться ценить и использовать его с умом.
+        Проведенное время с близкими, освоенные навыки, достижения поставленных целей - все это становится ценным вложением в наше будущее.
+        Отложив отвлекающие факторы и сконцентрировавшись на важном, мы можем использовать время для саморазвития и самосовершенствования.
+        Пусть каждый момент нашей жизни будет наполнен смыслом, радостью и благополучием, чтобы мы не остались сожалеть о упущенных возможностях.
+        Задумайтесь о том, куда идет ваше время - это будет ключом к пониманию собственных ценностей и приоритетов.
+        Помните, что каждая минута, проведенная с пользой и осознанно, приносит нам удовлетворение и душевное спокойствие в нашем быстром и беспокойном мире.
+    </p>
+
+    <div class="clock" id="clock"></div>
+
+    <script>
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+
+            hours = (hours < 10) ? "0" + hours : hours;
+            minutes = (minutes < 10) ? "0" + minutes : minutes;
+            seconds = (seconds < 10) ? "0" + seconds : seconds;
+
+            var timeString = hours + ":" + minutes + ":" + seconds;
+            document.getElementById("clock").textContent = timeString;
+        }
+
+        setInterval(updateClock, 1000);
+    </script>
+
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
+
+

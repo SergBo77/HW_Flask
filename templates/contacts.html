@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Контакты</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        .background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('{{ url_for('static', filename='Photos/99.jpg') }}'); /* Замените на путь к вашему фоновому изображению */
+            background-size: cover;
+            background-position: center;
+            z-index: -1;
+        }
+        .content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            text-align: center;
+            color: blue;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        }
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            margin-top: 30px;
+        }
+
+        .material-icons {
+        padding: 10px;
+        font-size: 40px;
+        width: 40px;
+        text-decoration: none;
+        margin: 5px 80px;
+         }
+        .social-icons a {
+            display: inline-block;
+            margin: 0 10px;
+            color: blue;
+            font-size: 24px;
+            text-decoration: none;
+        }
+        .social-icons a.telegram { /* Пример ссылки на Telegram */
+            color: #0088cc;
+        }
+        .social-icons a.whatsapp { /* Пример ссылки на WhatsApp */
+            color: #25d366;
+        }
+        .social-icons a.viber { /* Пример ссылки на Viber */
+            color: #7b519d;
+        }
+        .social-icons a.instagram { /* Пример ссылки на Instagram */
+            color: #e1306c;
+        }
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+
+  <h1 style="background-color: #007bff; color: #fff; text-align: center; padding-top: 50px;" >
+        <a class="navbar-brand d-flex justify-content-between align-items-center" href="#">
+            <span></span>
+            <img src="{{ url_for('static', filename='Photos/yoga_logo.jpg') }}" alt="Logo" width="59" height="50" class="d-inline-block align-text-top">
+            МИР ЙОГИ
+            <button type="button" class="btn btn-primary position-relative">
+              Профиль
+              <span class="position-absolute top-0 start-100 translate-middle p-2 bg-danger border border-light rounded-circle">
+                <span class="visually-hidden">Новые уведомления</span>
+              </span>
+            </button>
+            <span></span>
+        </a>
+  </h1>
+
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#"></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Переключатель навигации">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="/">Главная</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/">Блог</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="/contacts/">Контакты</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/time/">Наше время</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+  <center>
+       <div class="background"></div>
+         <div class="content">
+            <h1>Контактная информация</h1><hr>
+            <p>Телефон: +7 (123) 456-78-90<br>
+            Email: info@example.com</p><br>
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-telegram">telegram</i></a>
+
+                <a href="#"><i class="fab fa-whatsapp">whatsapp</i></a>
+
+                <a href="#"><i class="fab fa-viber">viber</i></a>
+
+                <a href="#"><i class="fab fa-instagram">instagram</i></a>
+            </div>
+         </div>
+       </div>
+  </center>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
